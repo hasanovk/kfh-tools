@@ -1,0 +1,76 @@
+# Custom ".bashcr" made by Karshi
+# Date: August 22, 2010
+
+LIGHT_CYAN="\[\033[1;36m\]"
+BLUE="\[\033[0;34m\]"
+LIGHT_BLUE="\[\033[1;34m\]"
+GREEN="\[\033[0;32m\]"
+LIGHT_GREEN="\[\033[1;32m\]"
+RED="\[\033[0;31m\]"
+LIGHT_RED="\[\033[1;31m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+PURPLE="\[\033[0;35m\]"
+LIGHT_PURPLE="\[\033[1;35m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+DARK_GRAY="\[\033[1;30m\]"
+YELLOW="\[\033[1;33m\]"
+
+PS1="$YELLOW[$LIGHT_CYAN\u$LIGHT_RED@\h $LIGHT_BLUE/\W$YELLOW]$LIGHT_GRAY$ "
+export  PS1
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# System PATH
+PATH=${PATH}:/sbin:/usr/sbin:/usr/local/sbin
+PATH=${PATH}:/bin:/usr/bin:/usr/local/bin
+
+# The "$HOME/bin"
+PATH=${PATH}:/Users/khasanov/bin
+
+# The default editor
+export EDITOR=vim
+
+# MySQL executable
+PATH=${PATH}:/usr/local/mysql/bin
+
+# JAVA
+#JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.6.0.jdk/Contents/Home
+#JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home
+export JAVA_HOME
+CLASSPATH=/Users/khasanov/tmp/
+export CLASSPATH
+
+# Maven
+#PATH=${PATH}:/Users/khasanov/MAC_Software/DevOps/Maven/apache-maven-3.5.0/bin
+PATH=${PATH}:/Users/khasanov/MAC_Software/DevOps/Maven/apache-maven-3.5.2/bin
+# Rust Programming
+PATH=${PATH}:$HOME/.cargo/bin
+export PATH
+
+# JIRA HOME
+JIRA_HOME=/Volumes/Data/KFH/KFH_Projects/Dev-Ops/JIRA
+export JIRA_HOME
+
+#*** Virtual Machine - Fusion **
+# VM Fusion Command Line:
+if [ -d "/Applications/VMware Fusion.app/Contents/Library" ]; then
+	 export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
+fi
+# VM Machines
+VMS="/Volumes/Data/Virtual_Machines/VM_Fusion"
+FREEBSD=${VMS}/FreeBSD.vmwarevm/FreeBSD\ 64-bit.vmx
+KALI_LINUX=${VMS}/Kali_Linux.vmwarevm/Kali\ Linux.vmx
+export FREEBSD KALI_LINUX
+
+
+# # mount the android file image
+# function mountAndroid { sudo hdiutil attach  /Volumes/My_Book_Pro/KFH/KFH_Projects/Android/android.dmg.sparseimage -mountpoint /Volumes/android; }
+# # umount the android file image
+# function umountAndroid { sudo hdiutil detach /Volumes/android; }
+
+# # To increase the cap for AndroidOS
+# ulimit -S -n 1024
+# # Docker shared Volume
+DOCKER_SHARE="/Volumes/Data/KFH/KFH_Projects/Dev-Ops/Docker/Data/khasanov"
+export DOCKER_SHARE
